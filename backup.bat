@@ -9,7 +9,7 @@ set date_tmp=
 del .\bak\%yyyy%%mm%%dd% /Q
 mkdir .\bak\%yyyy%%mm%%dd%
 
-robocopy . .\bak\%yyyy%%mm%%dd% /XF backup.bat /XD bak /S /UNILOG+:bak\backup.log /DCOPY:T /NJH
+robocopy . .\bak\%yyyy%%mm%%dd% /XF %~nx0 /XD bak /S /UNILOG+:bak\backup.log /DCOPY:T /NJH
 
 for %%f in ("bak\%yyyy%%mm%%dd%\*.*") do (
   rename %%f %%~nf_%mm%%dd%%%~xf
