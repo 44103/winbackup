@@ -8,4 +8,4 @@ set date_tmp=
 
 mkdir .\bak\%yyyy%%mm%%dd%
 
-robocopy . .\bak\%yyyy%%mm%%dd% /XF backup.bat /XD bak /S /UNILOG+:bak\backup.log /NJH
+robocopy . .\bak\%yyyy%%mm%%dd% /XF backup.bat /XD bak /S /UNILOG+:bak\backup.log /DCOPY:T /NJH
