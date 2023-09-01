@@ -1,5 +1,7 @@
 @ECHO OFF
 
+pushd %~dp0
+
 set date_tmp=%date:/=%
 set yyyy=%date_tmp:~0,4%
 set mm=%date_tmp:~4,2%
