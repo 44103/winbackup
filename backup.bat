@@ -3,11 +3,10 @@
 
 pushd %~dp0
 
-set date_tmp=%date:/=%
-set yyyy=%date_tmp:~0,4%
-set mm=%date_tmp:~4,2%
-set dd=%date_tmp:~6,2%
-set date_tmp=
+set vartmp=%date:/=%
+set yyyy=%vartmp:~0,4%
+set mm=%vartmp:~4,2%
+set dd=%vartmp:~6,2%
 
 del .\bak\%yyyy%%mm%%dd% /Q
 mkdir .\bak\%yyyy%%mm%%dd%
@@ -16,12 +15,12 @@ set "ignore_files=%~nx0 bakignore.txt"
 set "ignore_dirs=bak/"
 
 for /f %%a in (bakignore.txt) do (
-  set tmp=%%a
-  echo !tmp! | find "/" > nul
+  set vartmp=%%a
+  echo !vartmp! | find "/" > nul
   if errorlevel 1 (
-    set ignore_files=!ignore_files! !tmp!
+    set ignore_files=!ignore_files! !vartmp!
   ) else (
-    set ignore_dirs=!ignore_dirs! !tmp!
+    set ignore_dirs=!ignore_dirs! !vartmp!
   )
 )
 
